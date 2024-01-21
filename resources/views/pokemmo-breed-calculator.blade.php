@@ -90,6 +90,15 @@
                       </div>
                     </div>
                   </div>
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Total Price</h5>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">$</span>
+                        <input type="number" class="form-control text-end" id="totalprice" placeholder="Total" aria-describedby="basic-addon1" readonly>
+                      </div>
+                    </div>
+                  </div>
             </div>
             <div class="col mt-5">
                 <div class="input-group">
@@ -113,101 +122,97 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-          // Initialize total variable
-          var total = 0;
+    $(document).ready(function() {
+        // Initialize total variable
+        var total = 0;
 
-          // Click event for the Add 5000 button
-          $("#everstone").click(function() {
-            // Increment total by 5000
+        // Function to update both total and totalprice inputs
+        function updateTotal() {
+            // Update the value of the Total input
+            $("#total").val(total);
+
+            // Calculate totalprice as 50% increase of total
+            var totalprice = total * 1.5;
+            $("#totalprice").val(totalprice.toFixed(2));
+        }
+
+        // Click event for the Add 5000 button
+        $("#everstone").click(function() {
+            // Increment total by 5200
             total += 5200;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          // Click event for the Add 10000 button
-          $("#powerweight").click(function() {
-            // Increment total by 5000
+        // Click events for the various power items
+        $("#powerweight").click(function() {
+            // Increment total by 10000
             total += 10000;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          // Click event for the Add 10000 button
-          $("#powerbracer").click(function() {
-            // Increment total by 5000
+        // Click events for the various power items
+        $("#powerbracer").click(function() {
+            // Increment total by 10000
             total += 10000;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          // Click event for the Add 10000 button
-          $("#powerbelt").click(function() {
-            // Increment total by 5000
+        // Click events for the various power items
+        $("#powerbelt").click(function() {
+            // Increment total by 10000
             total += 10000;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          // Click event for the Add 10000 button
-          $("#powerlens").click(function() {
-            // Increment total by 5000
+        // Click events for the various power items
+        $("#powerlens").click(function() {
+            // Increment total by 10000
             total += 10000;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          // Click event for the Add 10000 button
-          $("#powerband").click(function() {
-            // Increment total by 5000
+        // Click events for the various power items
+        $("#powerband").click(function() {
+            // Increment total by 10000
             total += 10000;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          // Click event for the Add 10000 button
-          $("#poweranklet").click(function() {
-            // Increment total by 5000
+        // Click events for the various power items
+        $("#poweranklet").click(function() {
+            // Increment total by 10000
             total += 10000;
+            updateTotal();
+        });
 
-            // Update the value of the Total input
-            $("#total").val(total);
-          });
-
-          $("#addPokemonBtn").click(function() {
+        // Click event for the Add Pokemon button
+        $("#addPokemonBtn").click(function() {
             // Get the value of the Pokemon input
             var pokemonPrice = $("#pokemon").val();
             pokemonPrice = parseFloat(pokemonPrice);
             total += pokemonPrice;
+            updateTotal();
+        });
 
-            $("#total").val(total);
-          });
-
-          $("#pokemonBreed21KBtn").click(function() {
+        // Click event for the PokemonBreed21K button
+        $("#pokemonBreed21KBtn").click(function() {
             // Get the value of the Pokemon input
             var pokemonPrice = $("#pokemonBreed21K").val();
             pokemonPrice = parseFloat(pokemonPrice);
             total += pokemonPrice;
+            updateTotal();
+        });
 
-            $("#total").val(total);
-          });
-
-          $("#pokemonBreed5kBtn").click(function() {
+        // Click event for the PokemonBreed5K button
+        $("#pokemonBreed5kBtn").click(function() {
             // Get the value of the Pokemon input
             var pokemonPrice = $("#pokemonBreed5k").val();
             pokemonPrice = parseFloat(pokemonPrice);
             total += pokemonPrice;
-
-            $("#total").val(total);
+            updateTotal();
         });
+    });
+</script>
 
-        });
-      </script>
 </body>
 </html>
